@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HackedBook</string>
+    <string name="press_it_twice">Press "back" twice to close app</string>
+    <string name="action_home">Home</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="developed_by">App developed by Patrizio Tufarolo\n
+        &lt;patrizio@tufarolo.eu&gt;\n
+        https://patrizio.tufarolo.eu</string>
+</resources>

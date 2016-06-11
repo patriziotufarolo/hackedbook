@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_home_white_48dp"
+        android:title="@string/action_home"
+        android:showAsAction="always"
+        />
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_cached_white_48dp"
+        android:title="@string/action_refresh"
+        android:showAsAction="always"
+        />
+    <item
+        android:id="@+id/action_about"
+        android:title="About the app"
+        android:showAsAction="never"/>
+</menu>
