@@ -84,13 +84,12 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                     String domain_name = new String();
                     if (domainSplitted.length > 0) domain_start = domain.split(".")[0];
                     if (domainSplitted.length > 1) domain_name = domain.split(".")[1];
-
-                    if ((domain_start.equals("facebook")) || (domain_start.equals("www") || domain_start.equals("m") || domain_start.equals("touch") && domain_name.equals("facebook"))) {
-                        view.loadUrl(url);
+                    if (!domain_start.equalsIgnoreCase("facebook") && !domain_name.equalsIgnoreCase("facebook")) {
+                        view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                         return true;
                     }
                     else {
-                        view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                        view.loadUrl(url);
                         return true;
                     }
                 }
