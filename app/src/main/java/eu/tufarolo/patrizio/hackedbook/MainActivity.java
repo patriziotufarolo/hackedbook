@@ -79,17 +79,17 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 try {
                     URI uri = new URI(url);
                     String domain = uri.getHost();
-                    String[] domainSplitted = domain.split(".");
+                    String[] domainSplitted = domain.split("\\.");
                     String domain_start = new String();
                     String domain_name = new String();
-                    if (domainSplitted.length > 0) domain_start = domain.split(".")[0];
-                    if (domainSplitted.length > 1) domain_name = domain.split(".")[1];
-                    if (!domain_start.equalsIgnoreCase("facebook") && !domain_name.equalsIgnoreCase("facebook")) {
-                        view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                    if (domainSplitted.length > 0) domain_start = domainSplitted[0];
+                    if (domainSplitted.length > 1) domain_name = domainSplitted[1];
+                    if (domain_start.equalsIgnoreCase("facebook") || domain_name.equalsIgnoreCase("facebook")) {
+                        view.loadUrl(url);
                         return true;
                     }
                     else {
-                        view.loadUrl(url);
+                        view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                         return true;
                     }
                 }
